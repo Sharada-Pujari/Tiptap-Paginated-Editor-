@@ -140,7 +140,7 @@ const calculatePageBreaks = () => {
 
 ## Performance Metrics
 
-=- **Initial render**: ~200ms
+- **Initial render**: ~200ms
 - **Page break recalculation**: <16ms (60fps)
 - **Export HTML**: Instant
 - **Print preparation**: <100ms
