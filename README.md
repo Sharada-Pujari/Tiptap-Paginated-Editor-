@@ -6,7 +6,7 @@ A production-ready document editor with real-time pagination for legal documents
 
 **Live URL:** [Your Vercel URL here]
 
-## ✨ Features Implemented
+##  Features Implemented
 
 ### Core Requirements 
 - **Real-time Pagination**: Page breaks update dynamically as you type
@@ -36,7 +36,7 @@ A production-ready document editor with real-time pagination for legal documents
 - **Icons:** Lucide React
 - **Language:** TypeScript
 
-## 📦 Installation
+##  Installation
 ```bash
 # Clone the repository
 git clone https://github.com/Sharada-Pujari/Paginated-Editor-.git
@@ -137,27 +137,6 @@ const calculatePageBreaks = () => {
 **Page Size Options**: A4, Legal, etc.
 **Accessibility**: ARIA labels, keyboard navigation
 **Auto-save**: Local storage backup
-
-## Testing
-### Manual Test Cases
-
- Type multiple paragraphs until page break appears
- Delete content and watch page breaks update
- Paste large amounts of text
- Mix headings, paragraphs, and lists
- Change text alignment
- Export to HTML and verify formatting
- Print and verify page boundaries match editor
- Toggle page guides on/off
- Clear all content
-
-## Edge Cases Tested
-
- Very long paragraphs (500+ words)
- Rapid typing (updates smoothly)
- Editing middle of document (reflow works)
- All formatting combinations
- Empty editor state
 
 ## Performance Metrics
 
