@@ -4,7 +4,7 @@ A production-ready document editor with real-time pagination for legal documents
 
 ##  Live Demo
 
-**Live URL:** [Your Vercel URL here]
+**Live URL:** https://tiptap-paginated-editor-3-git-3aec59-sharadas-projects-2f82ee56.vercel.app/
 
 ##  Features Implemented
 
