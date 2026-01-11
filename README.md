@@ -185,10 +185,10 @@ const calculatePageBreaks = () => {
 **Total Time: ~11 hours**
 ## Acknowledgments
 
-**Assignment created by OpenSphere**
-**Built with assistance from Claude (Anthropic)**
-**Tiptap editor framework**
-**Next.js and Vercel**
+- **Assignment created by OpenSphere**
+- **Built with assistance from Claude (Anthropic)**
+- **Tiptap editor framework**
+- **Next.js and Vercel**
 
 ### Contact
 
