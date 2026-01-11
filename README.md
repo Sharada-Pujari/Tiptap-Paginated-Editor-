@@ -190,11 +190,10 @@ const calculatePageBreaks = () => {
 **Tiptap editor framework**
 **Next.js and Vercel**
 
-📧 Contact
-For questions or feedback:
+### Contact
 
--**Email**: sharadapujari7709@gmail.com
--**GitHub**:https://github.com/Sharada-Pujari
--**LinkedIn**:https://www.linkedin.com/in/sharada-pujari-978aa2268/
+- **Email**: sharadapujari7709@gmail.com
+- **GitHub**:https://github.com/Sharada-Pujari
+- **LinkedIn**:https://www.linkedin.com/in/sharada-pujari-978aa2268/
 
 
