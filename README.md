@@ -119,47 +119,47 @@ const calculatePageBreaks = () => {
 
 ### High Priority
 
-**Smart Table Pagination**: Break tables at row boundaries
-**Widow/Orphan Control**: Ensure minimum 2 lines per page
-**Image Handling**: Prevent breaks mid-image
-**Undo/Redo**: Full history stack
+- **Smart Table Pagination**: Break tables at row boundaries
+- **Widow/Orphan Control**: Ensure minimum 2 lines per page
+- **Image Handling**: Prevent breaks mid-image
+- **Undo/Redo**: Full history stack
 
 ### Medium Priority
 
-**Header/Footer Templates**: Customizable headers per page
-**PDF Generation**: Direct PDF export (using jsPDF or pdfmake)
-**Collaborative Editing**: Real-time collaboration with Yjs
-**Templates Library**: Pre-made legal document templates
+- **Header/Footer Templates**: Customizable headers per page
+- **PDF Generation**: Direct PDF export (using jsPDF or pdfmake)
+- **Collaborative Editing**: Real-time collaboration with Yjs
+- **Templates Library**: Pre-made legal document templates
 
 ## Nice to Have
 
-**Custom Page Breaks**: Manual break insertion by user
-**Page Size Options**: A4, Legal, etc.
-**Accessibility**: ARIA labels, keyboard navigation
-**Auto-save**: Local storage backup
+- **Custom Page Breaks**: Manual break insertion by user
+- **Page Size Options**: A4, Legal, etc.
+- **Accessibility**: ARIA labels, keyboard navigation
+- **Auto-save**: Local storage backup
 
 ## Performance Metrics
 
-**Initial render**: ~200ms
-**Page break recalculation**: <16ms (60fps)
-**Export HTML**: Instant
-**Print preparation**: <100ms
+=- **Initial render**: ~200ms
+- **Page break recalculation**: <16ms (60fps)
+- **Export HTML**: Instant
+- **Print preparation**: <100ms
 
 ### What I Learned
 
-**DOM Measurement**: How to accurately measure rendered content
-**requestAnimationFrame**: When and why to use it
-**Print CSS**: @page rules and print media queries
-**ProseMirror**: Document model and transaction system
-**Next.js SSR**: Handling client-only components with 'use client'
+- **DOM Measurement**: How to accurately measure rendered content
+- **requestAnimationFrame**: When and why to use it
+- **Print CSS**: @page rules and print media queries
+- **ProseMirror**: Document model and transaction system
+- **Next.js SSR**: Handling client-only components with 'use client'
 
 ### Development Process
 
-**Research Phase (2 hours)**: Studied Tiptap, pagination approaches
-**Core Implementation (4 hours)**: Built editor, pagination logic
-**Edge Case Handling (2 hours)**: Tested and fixed reflow issues
-**Polish & Features (2 hours)**: Added export, print, statistics
-**Documentation (1 hour)**: Wrote README, code comments
+- **Research Phase (2 hours)**: Studied Tiptap, pagination approaches
+- **Core Implementation (4 hours)**: Built editor, pagination logic
+- **Edge Case Handling (2 hours)**: Tested and fixed reflow issues
+- **Polish & Features (2 hours)**: Added export, print, statistics
+- **Documentation (1 hour)**: Wrote README, code comments
 
 **Total Time: ~11 hours**
 ## Acknowledgments
