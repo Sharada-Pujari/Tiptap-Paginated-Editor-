@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tiptap Paginated Document Editor
 
-## Getting Started
+A production-ready document editor with real-time pagination for legal documents, built for OpenSphere's immigration workflow platform.
 
-First, run the development server:
+## 🚀 Live Demo
 
+**Live URL:** [Your Vercel URL here]
+
+## ✨ Features Implemented
+
+### Core Requirements ✅
+- **Real-time Pagination**: Page breaks update dynamically as you type
+- **US Letter Format**: 8.5" × 11" with 1-inch margins on all sides
+- **Print Accuracy**: WYSIWYG - what you see matches print output
+- **Rich Text Formatting**: Bold, italic, underline, headings (H1, H2), bullet lists
+- **Text Alignment**: Left, center, right alignment support
+
+### Edge Cases Handled ✅
+- **Long paragraphs** spanning multiple pages
+- **Content reflow** when editing mid-document
+- **Variable line heights** from different formatting (headings vs paragraphs)
+- **Dynamic insertion/deletion** - page breaks recalculate instantly
+
+### Optional Enhancements ✅
+- **Page numbers** displayed on each page
+- **Export to HTML** with proper print styling
+- **Print functionality** with browser print dialog
+- **Visual guides** (toggle-able red dashed lines showing page breaks)
+- **Document statistics** panel showing page count and breaks
+
+## 🛠 Technology Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Editor:** Tiptap (ProseMirror-based)
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Language:** TypeScript
+
+## 📦 Installation
 ```bash
+# Clone the repository
+git clone [your-repo-url]
+cd tiptap-pagination-editor
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗 Project Structure
+```
+tiptap-pagination-editor/
+├── app/
+│   ├── components/
+│   │   └── PaginatedEditor.tsx    # Main editor component
+│   ├── globals.css                # Global styles
+│   ├── layout.tsx                 # Root layout
+│   └── page.tsx                   # Home page
+├── package.json
+└── README.md
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Technical Approach
 
-## Learn More
+### Pagination Algorithm
 
-To learn more about Next.js, take a look at the following resources:
+The core pagination logic uses **DOM-based height measurement**:
+```typescript
+const calculatePageBreaks = () => {
+  // 1. Get all top-level editor nodes (paragraphs, headings, etc.)
+  const nodes = Array.from(editorElement.children);
+  
+  // 2. Track cumulative height
+  let currentPageHeight = 0;
+  let pageNumber = 1;
+  
+  // 3. For each node, measure actual rendered height
+  nodes.forEach((node) => {
+    const totalHeight = node.offsetHeight + margins;
+    
+    // 4. If adding this node exceeds page height, insert page break
+    if (currentPageHeight + totalHeight > CONTENT_HEIGHT) {
+      pageBreaks.push({ pageNumber, top: node.offsetTop });
+      pageNumber++;
+      currentPageHeight = totalHeight;
+    } else {
+      currentPageHeight += totalHeight;
+    }
+  });
+};
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Why This Approach?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Accuracy**: Measures actual rendered heights, not estimated values
+2. **Flexibility**: Handles variable line heights automatically
+3. **Performance**: Uses `requestAnimationFrame` for smooth updates
+4. **Simplicity**: No complex layout calculations required
 
-## Deploy on Vercel
+### Key Technical Decisions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Decision | Reasoning |
+|----------|-----------|
+| DOM measurement over CSS calculations | More accurate for mixed content types |
+| requestAnimationFrame for updates | Prevents UI jank during typing |
+| US Letter at 96 DPI | Standard screen resolution mapping |
+| 1-inch margins (96px) | Exact match to print output |
+| Times New Roman font | Legal document standard |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚖️ Trade-offs & Limitations
+
+### Current Limitations
+
+1. **Single Column Only**:
