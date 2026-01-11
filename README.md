@@ -166,7 +166,7 @@ const calculatePageBreaks = () => {
 **Export HTML**: Instant
 **Print preparation**: <100ms
 
-🎓 What I Learned
+### What I Learned
 
 **DOM Measurement**: How to accurately measure rendered content
 **requestAnimationFrame**: When and why to use it
@@ -174,7 +174,7 @@ const calculatePageBreaks = () => {
 **ProseMirror**: Document model and transaction system
 **Next.js SSR**: Handling client-only components with 'use client'
 
-📝 Development Process
+### Development Process
 
 **Research Phase (2 hours)**: Studied Tiptap, pagination approaches
 **Core Implementation (4 hours)**: Built editor, pagination logic
@@ -182,13 +182,13 @@ const calculatePageBreaks = () => {
 **Polish & Features (2 hours)**: Added export, print, statistics
 **Documentation (1 hour)**: Wrote README, code comments
 
-Total Time: ~11 hours
+**Total Time: ~11 hours**
 ## Acknowledgments
 
-Assignment created by OpenSphere
-Built with assistance from Claude (Anthropic)
-Tiptap editor framework
-Next.js and Vercel teams
+**Assignment created by OpenSphere**
+**Built with assistance from Claude (Anthropic)**
+**Tiptap editor framework**
+**Next.js and Vercel**
 
 📧 Contact
 For questions or feedback:
